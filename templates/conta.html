@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Conta Contábil</title>
+</head>
+
+<body>
+
+    <h1>Cadastro de Conta Contábil</h1>
+
+    <form method="post" action="/contas">
+
+        <!-- Código da Conta -->
+        <label for="codigo">Código da Conta:</label><br>
+        <input type="text" id="codigo" name="codigo" required>
+        <br><br>
+
+        <!-- Nome da Conta -->
+        <label for="nome">Nome da Conta:</label><br>
+        <input type="text" id="nome" name="nome" required>
+        <br><br>
+
+        <!-- Tipo da Conta -->
+        <label for="tipo">Tipo da Conta:</label><br>
+        <select id="tipo" name="tipo" required>
+            <option value="">Selecione</option>
+            <option value="ATIVO">Ativo</option>
+            <option value="PASSIVO">Passivo</option>
+            <option value="PATRIMONIO">Patrimônio Líquido</option>
+            <option value="RECEITA">Receita</option>
+            <option value="DESPESA">Despesa</option>
+        </select>
+        <br><br>
+
+        <!-- Saldo Inicial -->
+        <label for="saldo_inicial">Saldo Inicial:</label><br>
+        <input type="number" id="saldo_inicial" name="saldo_inicial" step="0.01" required>
+        <br><br>
+
+        <!-- Descrição -->
+        <label for="descricao">Descrição (opcional):</label><br>
+        <textarea id="descricao" name="descricao" rows="3"></textarea>
+        <br><br>
+
+        <!-- Status -->
+        <label for="ativa">Conta Ativa?</label><br>
+        <select id="ativa" name="ativa">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+        </select>
+        <br><br>
+
+        <!-- Botão -->
+        <button type="submit">Salvar Conta</button>
+
+    </form>
+
+</body>
+
+</html>
