@@ -4,59 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Conta Contábil</title>
+    <!-- Link Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-    <h1>Cadastro de Conta Contábil</h1>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-    <form method="post" action="/contas">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Cadastro de Conta Contábil</h2>
 
-        <!-- Código da Conta -->
-        <label for="codigo">Código da Conta:</label><br>
-        <input type="text" id="codigo" name="codigo" required>
-        <br><br>
+                        <form method="post" action="/contas">
 
-        <!-- Nome da Conta -->
-        <label for="nome">Nome da Conta:</label><br>
-        <input type="text" id="nome" name="nome" required>
-        <br><br>
+                            <!-- Código da Conta -->
+                            <div class="mb-3">
+                                <label for="codigo" class="form-label">Código da Conta</label>
+                                <input type="text" class="form-control" id="codigo" name="codigo" required>
+                            </div>
 
-        <!-- Tipo da Conta -->
-        <label for="tipo">Tipo da Conta:</label><br>
-        <select id="tipo" name="tipo" required>
-            <option value="">Selecione</option>
-            <option value="ATIVO">Ativo</option>
-            <option value="PASSIVO">Passivo</option>
-            <option value="PATRIMONIO">Patrimônio Líquido</option>
-            <option value="RECEITA">Receita</option>
-            <option value="DESPESA">Despesa</option>
-        </select>
-        <br><br>
+                            <!-- Nome da Conta -->
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome da Conta</label>
+                                <input type="text" class="form-control" id="nome" name="nome" required>
+                            </div>
 
-        <!-- Saldo Inicial -->
-        <label for="saldo_inicial">Saldo Inicial:</label><br>
-        <input type="number" id="saldo_inicial" name="saldo_inicial" step="0.01" required>
-        <br><br>
+                            <!-- Tipo da Conta -->
+                            <div class="mb-3">
+                                <label for="tipo" class="form-label">Tipo da Conta</label>
+                                <select class="form-select" id="tipo" name="tipo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="ATIVO">Ativo</option>
+                                    <option value="PASSIVO">Passivo</option>
+                                    <option value="PATRIMONIO">Patrimônio Líquido</option>
+                                    <option value="RECEITA">Receita</option>
+                                    <option value="DESPESA">Despesa</option>
+                                </select>
+                            </div>
 
-        <!-- Descrição -->
-        <label for="descricao">Descrição (opcional):</label><br>
-        <textarea id="descricao" name="descricao" rows="3"></textarea>
-        <br><br>
+                            <!-- Saldo Inicial -->
+                            <div class="mb-3">
+                                <label for="saldo_inicial" class="form-label">Saldo Inicial</label>
+                                <input type="number" class="form-control" id="saldo_inicial" name="saldo_inicial"
+                                    step="0.01" required>
+                            </div>
 
-        <!-- Status -->
-        <label for="ativa">Conta Ativa?</label><br>
-        <select id="ativa" name="ativa">
-            <option value="true">Sim</option>
-            <option value="false">Não</option>
-        </select>
-        <br><br>
+                            <!-- Descrição -->
+                            <div class="mb-3">
+                                <label for="descricao" class="form-label">Descrição (opcional)</label>
+                                <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                            </div>
 
-        <!-- Botão -->
-        <button type="submit">Salvar Conta</button>
+                            <!-- Status -->
+                            <div class="mb-4">
+                                <label for="ativa" class="form-label">Conta Ativa?</label>
+                                <select class="form-select" id="ativa" name="ativa">
+                                    <option value="true">Sim</option>
+                                    <option value="false">Não</option>
+                                </select>
+                            </div>
 
-    </form>
+                            <!-- Botão -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Salvar Conta</button>
+                            </div>
 
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (opcional, para alguns componentes) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
