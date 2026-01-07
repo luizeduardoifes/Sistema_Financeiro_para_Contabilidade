@@ -1,0 +1,108 @@
+ /* estilo para o erro */
+ .erro-overlay {
+     position: fixed;
+     inset: 0;
+     background: rgba(30, 30, 30, 0.75);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+ }
+
+ .erro-box {
+     background: #f4f4f4;
+     border: 1px solid #b5b5b5;
+     padding: 20px 24px;
+     width: 420px;
+     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+     font-size: 14px;
+     color: #1f1f1f;
+     border-radius: 3px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+     text-align: center;
+     /* CENTRALIZA O CONTEÚDO */
+ }
+
+ .erro-box h4 {
+     margin: 0 0 12px 0;
+     font-size: 15px;
+     font-weight: 600;
+     color: #b00020;
+     border-bottom: 1px solid #cfcfcf;
+     padding-bottom: 6px;
+ }
+
+ .erro-box ul {
+     display: inline-block;
+     /* transforma a lista em bloco centralizável */
+     text-align: left;
+     /* mantém os itens alinhados à esquerda */
+     padding-left: 18px;
+     margin: 12px 0;
+ }
+
+ .erro-box li {
+     margin-bottom: 6px;
+ }
+
+ .erro-info {
+     margin-top: 12px;
+     padding-top: 8px;
+     border-top: 1px solid #cfcfcf;
+     font-size: 12px;
+     color: #555;
+ }
+
+
+ /* estilo para sucesso */
+ .sucesso-overlay {
+     position: fixed;
+     inset: 0;
+     background: rgba(30, 30, 30, 0.75);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+ }
+
+ .sucesso-box {
+     text-align: center;
+     background: #f4f4f4;
+     border: 1px solid #9fb7a1;
+     padding: 20px 24px;
+     width: 420px;
+     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+     font-size: 14px;
+     color: #1f1f1f;
+     border-radius: 3px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+ }
+
+ .sucesso-box h4 {
+     margin: 0 0 12px 0;
+     font-size: 15px;
+     font-weight: 600;
+     color: #1f7a3f;
+     border-bottom: 1px solid #cfcfcf;
+     padding-bottom: 6px;
+ }
+
+ .sucesso-check {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 8px;
+ }
+
+ .sucesso-check input {
+     width: 16px;
+     height: 16px;
+ }
+
+ .sucesso-info {
+     margin-top: 14px;
+     padding-top: 8px;
+     border-top: 1px solid #cfcfcf;
+     font-size: 12px;
+     color: #555;
+ }

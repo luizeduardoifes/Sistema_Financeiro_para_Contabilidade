@@ -6,6 +6,7 @@
     <title>Cadastro de Conta Contábil</title>
     <!-- Link Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/conta.css">
 </head>
 
 <body class="bg-light">
@@ -18,24 +19,27 @@
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Cadastro de Conta Contábil</h2>
 
+
+
+
                         <form method="post" action="/contas">
 
                             <!-- Código da Conta -->
                             <div class="mb-3">
                                 <label for="codigo" class="form-label">Código da Conta</label>
-                                <input type="text" class="form-control" id="codigo" name="codigo" required>
+                                <input type="text" class="form-control" id="codigo" name="codigo">
                             </div>
 
                             <!-- Nome da Conta -->
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome da Conta</label>
-                                <input type="text" class="form-control" id="nome" name="nome" required>
+                                <input type="text" class="form-control" id="nome" name="nome">
                             </div>
 
                             <!-- Tipo da Conta -->
                             <div class="mb-3">
                                 <label for="tipo" class="form-label">Tipo da Conta</label>
-                                <select class="form-select" id="tipo" name="tipo" required>
+                                <select class="form-select" id="tipo" name="tipo">
                                     <option value="">Selecione</option>
                                     <option value="ATIVO">Ativo</option>
                                     <option value="PASSIVO">Passivo</option>
@@ -49,7 +53,7 @@
                             <div class="mb-3">
                                 <label for="saldo_inicial" class="form-label">Saldo Inicial</label>
                                 <input type="number" class="form-control" id="saldo_inicial" name="saldo_inicial"
-                                    step="0.01" required>
+                                    step="0.01" min="0" value="0.00">
                             </div>
 
                             <!-- Descrição -->
@@ -80,9 +84,44 @@
             </div>
         </div>
     </div>
+    <!-- text box para erro -->
+    {% if erro %}
+    <div id="erroOverlay" class="erro-overlay">
+        <div class="erro-box">
+            <h4> ERROR! </h4>
+            <ul>
+                {% for e in erro %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+            <p class="erro-info">
+                Pressione <b>ESPAÇO</b> para voltar
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    <!-- text box para sucesso -->
+    {% if sucesso %}
+    <div id="sucessoOverlay" class="sucesso-overlay">
+        <div class="sucesso-box">
+            <h4>Operação concluída</h4>
+
+            <div class="sucesso-check">
+                <input type="checkbox" checked disabled>
+                <span>{{sucesso}}</span>
+            </div>
+
+            <div class="sucesso-info">
+                Pressione <b>ESPAÇO</b> para continuar
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
 
     <!-- Bootstrap JS (opcional, para alguns componentes) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/conta.js"></script>
 </body>
 
 </html>

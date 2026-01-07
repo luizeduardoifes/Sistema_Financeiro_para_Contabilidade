@@ -34,5 +34,4 @@ def excluir_conta() -> bool:
     cursor.execute(DELETE_CONTA)
     conexao.commit()
     conexao.close()
-    return (cursor.rowcount > 0)
-    
+    return (cursor.rowcount > 0)   
