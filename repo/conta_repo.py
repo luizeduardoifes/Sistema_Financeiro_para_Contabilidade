@@ -34,4 +34,12 @@ def excluir_conta() -> bool:
     cursor.execute(DELETE_CONTA)
     conexao.commit()
     conexao.close()
-    return (cursor.rowcount > 0)   
+    return (cursor.rowcount > 0)
+
+def checagem_conta(codigo: str, nome: str) -> bool:
+    conexao = obter_conexao()
+    cursor = conexao.cursor()
+    cursor.execute(CHECAGEM_CONTA, (codigo, nome))
+    resultado = cursor.fetchone()  
+    conexao.close()
+    return resultado is not None  
