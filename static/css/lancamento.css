@@ -1,0 +1,61 @@
+ /* Estilo clássico geral */
+ body {
+     background-color: #c0c0c0;
+     /* fundo cinza clássico */
+     font-family: "Courier New", monospace;
+     /* fonte monoespace */
+ }
+
+ .card-classico {
+     background-color: #e0e0e0;
+     /* fundo do formulário */
+     border: 2px solid #000;
+     /* borda preta reta */
+     padding: 20px;
+     width: 500px;
+ }
+
+ .card-header-classico {
+     background-color: #000080;
+     /* azul escuro */
+     color: white;
+     font-weight: bold;
+     padding: 8px;
+     border-bottom: 2px solid #000;
+     text-align: center;
+ }
+
+ .form-control,
+ .form-select,
+ textarea {
+     border: 1px solid #000;
+     /* borda preta */
+     border-radius: 0px;
+     /* sem arredondamento */
+     background-color: #fff;
+     font-weight: bold;
+     /* texto em negrito */
+ }
+
+ .btn-classico {
+     background-color: #c0c0c0;
+     color: black;
+     border: 1px solid #000;
+     font-weight: bold;
+ }
+
+ .btn-classico:hover {
+     background-color: #a0a0a0;
+ }
+
+ /* Centralização vertical e horizontal */
+ .center-screen {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ label {
+     font-weight: bold;
+ }

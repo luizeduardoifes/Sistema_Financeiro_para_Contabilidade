@@ -45,6 +45,9 @@ def salvar_contas(request: Request, codigo: str = Form(...),nome: str = Form(...
         inserir_dado = inserir_conta(encapslamento)
         return templates.TemplateResponse("conta.html", {"request":request, "insert": inserir_dado, "sucesso": "Registro salvo com sucesso"})
 
+@app.get("/lancamento")
+def lancamento(request: Request):
+    return templates.TemplateResponse("lancamento.html", {"request": request})
 
 
 if __name__ == "__main__":

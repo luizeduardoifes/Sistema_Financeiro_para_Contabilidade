@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lançamento Contábil - Estilo Clássico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap básico -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/lancamento.css">
+
+</head>
+
+<body>
+
+    <div class="center-screen">
+
+        <div class="card-classico">
+
+            <div class="card-header-classico">
+                Lançamento Contábil
+            </div>
+
+            <div class="card-body">
+                <form action="/lancamentos" method="post">
+
+                    <div class="mb-3">
+                        <label>Data</label>
+                        <input type="date" name="data" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Conta Débito</label>
+                        <select name="conta_debito" class="form-select" required>
+                            <option value="">Selecione</option>
+                            <option value="1">1.1.01.001 - Caixa</option>
+                            <option value="2">1.1.02.001 - Banco</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Conta Crédito</label>
+                        <select name="conta_credito" class="form-select" required>
+                            <option value="">Selecione</option>
+                            <option value="3">3.1.01.001 - Receita de Vendas</option>
+                            <option value="4">2.1.01.001 - Fornecedores</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Valor</label>
+                        <input type="number" step="0.01" name="valor" class="form-control" placeholder="0,00" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Histórico</label>
+                        <textarea name="historico" class="form-control" rows="3"
+                            placeholder="Ex: Venda de mercadoria à vista" required></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-classico">💾 Registrar Lançamento</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
