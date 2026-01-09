@@ -11,6 +11,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 def login(request: Request):
+    return templates.TemplateResponse("menu.html", {"request": request})
+
+
+@app.get("/cadastrar_conta")
+def login(request: Request):
     return templates.TemplateResponse("conta.html", {"request": request})
 
 @app.post("/contas")
