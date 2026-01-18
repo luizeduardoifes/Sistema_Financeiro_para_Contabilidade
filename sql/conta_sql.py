@@ -1,11 +1,12 @@
 CREATE_TABLE_CONTA = """
 CREATE TABLE IF NOT EXISTS Conta (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     codigo TEXT NOT NULL UNIQUE,
     nome TEXT NOT NULL UNIQUE,
     tipo TEXT NOT NULL,
     saldo REAL NOT NULL,
     descricao TEXT NOT NULL,
-    ativa BOOLEAN DEFAULT NULL
+    ativa BOOLEAN NOT NULL
 );
 """
 
@@ -16,7 +17,8 @@ VALUES (?, ?, ?, ?, ?, ?)
 
 UPDATE_CONTA = """
 UPDATE Conta 
-SET codigo = ?, 
+SET id = ?,
+    codigo = ?, 
     nome = ?,
     tipo = ?,
     saldo = ?,

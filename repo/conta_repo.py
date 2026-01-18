@@ -3,8 +3,7 @@ from models.conta import Conta
 from sql.conta_sql import *
 
 
-def criar_tabela_remetente():
-    """Cria a tabela Remententes se ela não existir."""
+def criar_tabela_conta():
     conexao = obter_conexao()
     cursor = conexao.cursor()
     cursor.execute(CREATE_TABLE_CONTA)
@@ -15,7 +14,7 @@ def inserir_conta(conta: Conta) -> Conta:
     conexao = obter_conexao()
     cursor = conexao.cursor()
     cursor.execute(INSERT_CONTA,(conta.codigo, conta.nome, conta.tipo, conta.saldo, conta.descricao, conta.ativa))
-    conta.codigo = cursor.lastrowid
+    conta.id = cursor.lastrowid
     conexao.commit()
     conexao.close()
     return conta
@@ -23,7 +22,7 @@ def inserir_conta(conta: Conta) -> Conta:
 def atualizar_conta(conta: Conta) -> bool:
     conexao = obter_conexao()
     cursor = conexao.cursor()
-    cursor.execute(UPDATE_CONTA,(conta.codigo, conta.nome, conta.tipo, conta.saldo, conta.descricao, conta.ativa))
+    cursor.execute(UPDATE_CONTA,(conta.id,conta.codigo, conta.nome, conta.tipo, conta.saldo, conta.descricao, conta.ativa))
     conexao.commit()
     conexao.close()
     return (cursor.rowcount > 0)

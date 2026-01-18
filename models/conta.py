@@ -5,6 +5,7 @@ from fastapi import Form
 
 @dataclass
 class Conta:
+    id: int
     codigo: str
     nome: str
     tipo: str # -> (Ativo, Passivo, PL, Receita, Despesa)

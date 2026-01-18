@@ -4,7 +4,7 @@ from fastapi.templating import Jinja2Templates
 from repo.conta_repo import *
 import uvicorn
 
-criar_tabela_remetente()
+criar_tabela_conta()
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -46,7 +46,7 @@ def salvar_contas(request: Request, codigo: str = Form(...),nome: str = Form(...
         return templates.TemplateResponse("conta.html", {"request": request, "erro": erro})
     
     else:
-        encapsulamento = Conta(codigo=codigo,nome=nome, tipo=tipo, saldo=saldo_inicial, descricao=descricao, ativa=ativa)
+        encapsulamento = Conta(id=0,codigo=codigo,nome=nome, tipo=tipo, saldo=saldo_inicial, descricao=descricao, ativa=ativa)
         inserir_dado = inserir_conta(encapsulamento)
         return templates.TemplateResponse("conta.html", {"request":request, "insert": inserir_dado, "sucesso": "Registro salvo com sucesso"})
 
