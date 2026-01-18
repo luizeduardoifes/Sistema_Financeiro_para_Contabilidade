@@ -1,0 +1,42 @@
+body {
+    overflow-x: hidden;
+}
+
+.sidebar {
+    width: 70px;
+    height: 100vh;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: #212529;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.sidebar a {
+    color: #adb5bd;
+    font-size: 1.4rem;
+    margin: 18px 0;
+}
+
+.sidebar a:hover {
+    color: #fff;
+}
+
+.content {
+    margin-left: 70px;
+    margin-top: 56px;
+    padding: 2rem;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
