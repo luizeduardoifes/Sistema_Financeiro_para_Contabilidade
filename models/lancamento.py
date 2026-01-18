@@ -10,12 +10,7 @@ class Lancamento:
     valor: float
     historico: str
     
-    def registrar(self):
-        if self.valor <= 0:
-            raise ValueError("O valor de lançamento tem que ser maior do que o 0.")
-        
-        self.conta_debito.debitar(self.valor)
-        self.conta_credito.creditar(self.valor)
+
         
         
     
