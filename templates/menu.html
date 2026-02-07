@@ -11,6 +11,42 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            width: 70px;
+            height: 100vh;
+            background-color: #212529;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 15px 0;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #0d6efd;
+        }
+
+        /* CONTEÚDO */
+        .content {
+            margin-left: 90px;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +59,7 @@
         </div>
     </nav>
 
-    <!-- SIDEBAR ÍCONES -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
 
         <a href="#" data-bs-toggle="tooltip" title="Dashboard">
@@ -42,7 +78,7 @@
             <i class="bi bi-people"></i>
         </a>
 
-        <a href="/cadastrar_conta" data-bs-toggle="tooltip" title="cadastrar conta">
+        <a href="/cadastrar_conta" data-bs-toggle="tooltip" title="Cadastrar Conta">
             <i class="bi bi-person-add"></i>
         </a>
 
@@ -64,8 +100,14 @@
         <p>Interface ERP com menu lateral apenas por ícones.</p>
     </div>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Ativar tooltips -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el))
+    </script>
 
 </body>
 
