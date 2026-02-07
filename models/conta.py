@@ -10,8 +10,8 @@ class Conta:
     nome: str
     tipo: str # -> (Ativo, Passivo, PL, Receita, Despesa)
     saldo: float = 0.0
-    descricao : Optional[str] = None
-    ativa: Optional[bool] = Form(None)
+    descricao: Optional[str] = None
+    ativa: bool 
     
     def debitar(self, valor: float):
         self.saldo += valor
